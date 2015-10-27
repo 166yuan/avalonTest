@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test of avalon</title>
+    <meta name="keywords" content="avalon">
+    <meta name="description" content="service">
+</head>
+<body>
+    <script src="public/js/libs/avalon.js"></script>
+    <script src="public/js/libs/require.js"></script>
+    <script type="text/javascript">
+        require.config({
+            baseUrl: "public/js",
+            urlArgs: 'v='+ '0.1',
+            paths: {
+                avalon: "libs/avalon",
+                domReady: 'libs/domReady',
+                m: "libs/module",
+                jquery: "libs/jquery-2.1.4.min",
+                validate: "libs/jquery.validate",
+                moment: "libs/moment.min"
+            }
+        });
+    </script>
+    <script type="text/javascript">
+    require(['m'], function(module) {
+        DS.app({
+            
+        });
+    });
+</script>
+</body>
+</body>
+</html>
