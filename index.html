@@ -7,29 +7,25 @@
     <meta name="description" content="service">
 </head>
 <body>
+    <div class="wraper clearfix" ms-controller="index">
+        <header>
+            <nav class="navbar">
+                <ul class="navbar-menu clearfix">
+                    <li ms-repeat="navMenu"><a href="#">{{el}}</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
     <script src="public/js/libs/avalon.js"></script>
     <script src="public/js/libs/require.js"></script>
+    <script src="public/js/init.js"></script>
     <script type="text/javascript">
-        require.config({
-            baseUrl: "public/js",
-            urlArgs: 'v='+ '0.1',
-            paths: {
-                avalon: "libs/avalon",
-                domReady: 'libs/domReady',
-                m: "libs/module",
-                jquery: "libs/jquery-2.1.4.min",
-                validate: "libs/jquery.validate",
-                moment: "libs/moment.min"
-            }
+        require(['m'], function(module) {
+            DS.app({
+                index :{ '$id':'index' } 
+            });
         });
     </script>
-    <script type="text/javascript">
-    require(['m'], function(module) {
-        DS.app({
-            
-        });
-    });
-</script>
 </body>
 </body>
 </html>

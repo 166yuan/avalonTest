@@ -56,6 +56,8 @@ define(['jquery'],function($) {
 
     function _initModule(name, config) {
         require([name], function(constructor) {
+            /*console.log(constructor);*/
+            /* constructor here is the set of module's useable method*/
             var module = constructors[name] = constructor;
             module.init && module.init(config);
             module.fn && $.extend(module, module.fn);
